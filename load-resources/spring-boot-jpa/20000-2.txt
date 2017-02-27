@@ -1,0 +1,11 @@
+sending 20000 messages per second
+Requests      [total, rate]            100000, 19996.57
+Duration      [total, attack, wait]    32.114723047s, 5.000857685s, 27.113865362s
+Latencies     [mean, 50, 95, 99, max]  565.7357ms, 161.357669ms, 851.689632ms, 30.023356215s, 32.065571744s
+Bytes In      [total, mean]            0, 0.00
+Bytes Out     [total, mean]            0, 0.00
+Success       [ratio]                  0.00%
+Status Codes  [code:count]             0:100000  
+Error Set:
+Post http://localhost:8080/items/: dial tcp 0.0.0.0:0->127.0.0.1:8080: socket: too many open files
+Post http://localhost:8080/items/: net/http: timeout awaiting response headers

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vert.x-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/vert.x-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vert.x-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/vert.x-sample_main.iml" group="vert.x-sample" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/vert.x-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/vert.x-sample_test.iml" group="vert.x-sample" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,3 @@
+spring.datasource.url: jdbc:postgresql://localhost:5432/biz
+spring.datasource.username: postgres
+spring.datasource.pool-size: 30

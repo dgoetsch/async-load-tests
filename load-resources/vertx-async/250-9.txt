@@ -1,0 +1,9 @@
+sending 250 messages per second
+Requests      [total, rate]            1250, 250.20
+Duration      [total, attack, wait]    5.000737555s, 4.995999162s, 4.738393ms
+Latencies     [mean, 50, 95, 99, max]  5.629775ms, 4.486006ms, 7.162718ms, 46.379739ms, 95.235066ms
+Bytes In      [total, mean]            72500, 58.00
+Bytes Out     [total, mean]            18750, 15.00
+Success       [ratio]                  100.00%
+Status Codes  [code:count]             201:1250  
+Error Set:

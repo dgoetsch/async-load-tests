@@ -1,0 +1,10 @@
+sending 20000 messages per second
+Requests      [total, rate]            100000, 19981.37
+Duration      [total, attack, wait]    5.094247519s, 5.004661443s, 89.586076ms
+Latencies     [mean, 50, 95, 99, max]  127.230569ms, 111.171747ms, 307.842109ms, 412.286295ms, 747.670435ms
+Bytes In      [total, mean]            2738238, 27.38
+Bytes Out     [total, mean]            708165, 7.08
+Success       [ratio]                  47.21%
+Status Codes  [code:count]             201:47211  0:52789  
+Error Set:
+Post http://localhost:8080/items/: dial tcp 0.0.0.0:0->127.0.0.1:8080: socket: too many open files

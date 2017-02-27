@@ -1,0 +1,51 @@
+buildscript {
+  ext.kotlinVersion = '1.0.3'
+  ext.docker_plugin_version = '3.0.3'
+
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    //https://github.com/bmuschko/gradle-docker-plugin
+    classpath "com.bmuschko:gradle-docker-plugin:$docker_plugin_version"
+  }
+}
+
+apply plugin:'java'
+apply plugin:'application'
+apply plugin: 'distribution'
+apply plugin: 'kotlin'
+
+group = "dev.yn"
+version = "0.0.1"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "dev.yn.load.analyzer.AppKt"
+
+repositories {
+  maven {
+    url "http://dl.bintray.com/kotlin/ktor"
+  }
+  jcenter()
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+  compile "org.funktionale:funktionale-all:1.0.0-final"
+  compile "org.slf4j:slf4j-api:1.7.23"
+}
+
+jar {
+  archiveName "dev.yn.load-analyze.jar"
+}
+
+distributions {
+  main {
+    baseName = "$group.${rootProject.name}"
+  }
+}

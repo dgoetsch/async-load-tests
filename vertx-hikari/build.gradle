@@ -1,0 +1,68 @@
+buildscript {
+  ext.kotlinVersion = '1.0.3'
+  ext.docker_plugin_version = '3.0.3'
+
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    //https://github.com/bmuschko/gradle-docker-plugin
+    classpath "com.bmuschko:gradle-docker-plugin:$docker_plugin_version"
+  }
+}
+
+apply plugin:'java'
+apply plugin:'application'
+apply plugin: 'distribution'
+apply plugin: 'kotlin'
+
+group = "dev.yn"
+version = "0.0.1"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "dev.yn.vert.x.AppKt"
+
+repositories {
+  maven {
+    url "http://dl.bintray.com/kotlin/ktor"
+  }
+  jcenter()
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+  compile "io.vertx:vertx-core:3.3.3"
+  compile "io.vertx:vertx-web:3.3.3"
+  compile "io.vertx:vertx-jdbc-client:3.3.3"
+  compile 'org.postgresql:postgresql:42.0.0'
+  compile "org.funktionale:funktionale-all:1.0.0-final"
+  compile "org.slf4j:slf4j-api:1.7.23"
+  compile 'com.zaxxer:HikariCP:2.6.0'
+}
+
+jar {
+  archiveName "dev.yn.vertx-load.jar"
+}
+
+distributions {
+  main {
+    baseName = "$group.${rootProject.name}"
+  }
+}
+
+task runJdbc(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'dev.yn.vert.x.AppKt'
+  args 'jdbc'
+}
+
+task runAsync(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'dev.yn.vert.x.AppKt'
+  args 'async'
+}
